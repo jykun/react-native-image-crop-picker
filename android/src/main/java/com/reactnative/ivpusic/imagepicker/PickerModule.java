@@ -47,8 +47,8 @@ import java.io.IOException;
  */
 public class PickerModule extends ReactContextBaseJavaModule implements ActivityEventListener {
 
-    private static final int IMAGE_PICKER_REQUEST = 1;
-    private static final int CAMERA_PICKER_REQUEST = 2;
+    private static final int IMAGE_PICKER_REQUEST = 11;
+    private static final int CAMERA_PICKER_REQUEST = 22;
     private static final String E_ACTIVITY_DOES_NOT_EXIST = "E_ACTIVITY_DOES_NOT_EXIST";
 
     private static final String E_PICKER_CANCELLED_KEY = "picker_cancel";
@@ -220,8 +220,8 @@ public class PickerModule extends ReactContextBaseJavaModule implements Activity
             galleryIntent.setAction(Intent.ACTION_GET_CONTENT);
             galleryIntent.putExtra(Intent.EXTRA_LOCAL_ONLY, true);
 
-            final Intent chooserIntent = Intent.createChooser(galleryIntent, "Pick an image");
-            activity.startActivityForResult(chooserIntent, IMAGE_PICKER_REQUEST);
+            //final Intent chooserIntent = Intent.createChooser(galleryIntent, "Pick an image");
+            activity.startActivityForResult(galleryIntent, IMAGE_PICKER_REQUEST);
         } catch (Exception e) {
             mPickerPromise.reject(E_FAILED_TO_SHOW_PICKER, e);
         }
