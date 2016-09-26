@@ -9,7 +9,6 @@ android {
         targetSdkVersion 24
         versionCode 1
         generatedDensities = []
-        vectorDrawables.useSupportLibrary = true
     }
     compileOptions {
         sourceCompatibility JavaVersion.VERSION_1_7
