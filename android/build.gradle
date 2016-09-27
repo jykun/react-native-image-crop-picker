@@ -29,8 +29,11 @@ android {
     aaptOptions {  
     additionalParameters "--no-version-vectors"  
     }
+    generatedDensities = []
 }
-
+aaptOptions {  
+    additionalParameters "--no-version-vectors"  
+}
 dependencies {
     compile 'com.facebook.react:react-native:+'
     compile 'com.android.support:appcompat-v7:24.2.0'
